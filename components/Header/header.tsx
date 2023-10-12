@@ -1,21 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import createApolloClient from '../../client'
+import { gql } from '@apollo/client'
 import Hamburger from './hamburger'
 import logo from '../../public/logo_white.svg'
 
-export default function Header() {
+export default function Header({ menuItems }) {
     const [isOpen, setIsOpen] = React.useState(false)
 
     const handleIsOpen = () => {
         setIsOpen(!isOpen)
     }
-
-    const menuItems = [
-        { label: 'Home', uri: '/', id: 1 },
-        { label: 'About', uri: '/about', id: 2 },
-        { label: 'Contact', uri: '/contact', id: 3 },
-    ]
+    console.log(menuItems)
 
     return (
         <header className="font-mono bg-primary pt-4 pb-4">
@@ -28,10 +25,12 @@ export default function Header() {
                     <ul className="flex">
                         {menuItems.map((item) => (
                             <li
-                                key={item.id}
+                                key={item.node.id}
                                 className="mr-8 last:mr-0 text-l text-white hover:text-secondary transition"
                             >
-                                <Link href={item.uri}>{item.label}</Link>
+                                <Link href={item.node.path}>
+                                    {item.node.label}
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -45,10 +44,12 @@ export default function Header() {
                     >
                         {menuItems.map((item) => (
                             <li
-                                key={item.id}
+                                key={item.node.id}
                                 className="mr-8 last:mr-0 text-l text-white hover:text-secondary transition"
                             >
-                                <Link href={item.uri}>{item.label}</Link>
+                                <Link href={item.node.path}>
+                                    {item.node.label}
+                                </Link>
                             </li>
                         ))}
                     </ul>

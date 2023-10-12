@@ -16,7 +16,7 @@ const hanken = Hanken_Grotesk({
     variable: '--font-hanken',
 })
 
-export default function Layout({ preview, children }) {
+export default function Layout({ preview, children, menuItems }) {
     return (
         <>
             <Meta />
@@ -24,7 +24,7 @@ export default function Layout({ preview, children }) {
                 className={`${jb.variable} ${hanken.variable} min-h-screen font-sans`}
             >
                 <Alert preview={preview} />
-                <Header />
+                <Header menuItems={menuItems} />
                 <main>{children}</main>
             </div>
             <Footer />
