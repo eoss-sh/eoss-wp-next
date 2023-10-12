@@ -2,6 +2,7 @@ import { Hanken_Grotesk, JetBrains_Mono } from 'next/font/google'
 import Alert from './alert'
 import Footer from './footer'
 import Meta from './meta'
+import Header from './Header/header'
 
 const jb = JetBrains_Mono({
     subsets: ['latin'],
@@ -23,6 +24,7 @@ export default function Layout({ preview, children }) {
                 className={`${jb.variable} ${hanken.variable} min-h-screen font-sans`}
             >
                 <Alert preview={preview} />
+                <Header />
                 <main>{children}</main>
             </div>
             <Footer />
