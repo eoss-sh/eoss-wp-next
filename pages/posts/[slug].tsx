@@ -11,10 +11,14 @@ import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
 import PostTitle from '../../components/post-title'
 import Tags from '../../components/tags'
-import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
+import {
+    getAllPostsWithSlug,
+    getPostAndMorePosts,
+    getNavItems,
+} from '../../lib/api'
 import { CMS_NAME } from '../../lib/constants'
 
-export default function Post({ post, posts, preview }) {
+export default function Post({ post, posts, preview, menuItems }) {
     const router = useRouter()
     const morePosts = posts?.edges
 
@@ -23,9 +27,9 @@ export default function Post({ post, posts, preview }) {
     }
 
     return (
-        <Layout preview={preview}>
+        <Layout preview={preview} menuItems={menuItems}>
             <Container>
-                <Header />
+                <Header menuItems={menuItems} />
                 {router.isFallback ? (
                     <PostTitle>Loading…</PostTitle>
                 ) : (
@@ -72,12 +76,14 @@ export const getStaticProps: GetStaticProps = async ({
     previewData,
 }) => {
     const data = await getPostAndMorePosts(params?.slug, preview, previewData)
+    const menuItems = await getNavItems()
 
     return {
         props: {
             preview,
             post: data.post,
             posts: data.posts,
+            menuItems,
         },
         revalidate: 10,
     }
