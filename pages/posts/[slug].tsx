@@ -5,7 +5,6 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import MoreStories from '../../components/more-stories'
-import Header from '../../components/Header/header'
 import PostHeader from '../../components/post-header'
 import SectionSeparator from '../../components/section-separator'
 import Layout from '../../components/layout'
@@ -29,7 +28,6 @@ export default function Post({ post, posts, preview, menuItems }) {
     return (
         <Layout preview={preview} menuItems={menuItems}>
             <Container>
-                <Header menuItems={menuItems} />
                 {router.isFallback ? (
                     <PostTitle>Loading…</PostTitle>
                 ) : (
@@ -91,9 +89,8 @@ export const getStaticProps: GetStaticProps = async ({
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const allPosts = await getAllPostsWithSlug()
-
     return {
         paths: allPosts.edges.map(({ node }) => `/posts/${node.slug}`) || [],
-        fallback: true,
+        fallback: false,
     }
 }

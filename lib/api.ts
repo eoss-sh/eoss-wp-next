@@ -218,17 +218,8 @@ export async function getNavItems() {
         edges {
           node {
             label
-            url
+            id
             path
-            childItems {
-              edges {
-                node {
-                  label
-                  path
-                  id
-                }
-              }
-            }
           }
         }
       }

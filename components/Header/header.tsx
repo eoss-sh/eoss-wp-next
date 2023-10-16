@@ -1,8 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import createApolloClient from '../../client'
-import { gql } from '@apollo/client'
 import Hamburger from './hamburger'
 import logo from '../../public/logo_white.svg'
 
@@ -12,8 +10,8 @@ export default function Header({ menuItems }) {
     const handleIsOpen = () => {
         setIsOpen(!isOpen)
     }
-    console.log(menuItems)
 
+    console.log(menuItems)
     return (
         <header className="font-mono bg-primary pt-4 pb-4">
             <div className="flex flex-row items-center justify-between container mx-auto">
@@ -23,7 +21,7 @@ export default function Header({ menuItems }) {
 
                 <nav className="hidden md:block">
                     <ul className="flex">
-                        {menuItems.map((item) => (
+                        {menuItems.map((item: any) => (
                             <li
                                 key={item.node.id}
                                 className="mr-8 last:mr-0 text-l text-white hover:text-secondary transition"
@@ -42,7 +40,7 @@ export default function Header({ menuItems }) {
                             isOpen ? 'block' : 'hidden'
                         } flex flex-col`}
                     >
-                        {menuItems.map((item) => (
+                        {menuItems.map((item: any) => (
                             <li
                                 key={item.node.id}
                                 className="mr-8 last:mr-0 text-l text-white hover:text-secondary transition"
