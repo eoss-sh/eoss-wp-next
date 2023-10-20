@@ -3,11 +3,11 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import { getAllPostsForHome, getNavItems } from '../lib/api'
 
-export default function Index({ preview, menuItems }) {
+export default function Referenzen({ preview, menuItems }) {
     return (
         <Layout preview={preview} menuItems={menuItems}>
             <Container>
-                <h1>Hello World</h1>
+                <h1>Hello World - Referenzen</h1>
             </Container>
         </Layout>
     )

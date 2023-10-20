@@ -26,8 +26,8 @@ export default function Layout({ preview, children, menuItems }) {
                 <Alert preview={preview} />
                 <Header menuItems={menuItems} />
                 <main>{children}</main>
+                <Footer />
             </div>
-            <Footer />
         </>
     )
 }
