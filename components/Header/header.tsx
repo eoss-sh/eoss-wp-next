@@ -14,7 +14,7 @@ export default function Header({ menuItems }) {
     console.log(menuItems)
     return (
         <header className="font-mono bg-primary pt-4 pb-4">
-            <div className="flex flex-row items-center justify-between container mx-auto">
+            <div className="flex flex-row items-center justify-between container mx-auto px-5 md:px-0">
                 <Link href="/">
                     <Image src={logo} width={100} height={50} alt="Logo" />
                 </Link>

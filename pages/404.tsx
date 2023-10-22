@@ -1,13 +1,14 @@
 import { GetStaticProps } from 'next'
 import Container from '../components/container'
 import Layout from '../components/layout'
-import Hero from '../components/hero'
 import { getAllPostsForHome, getNavItems } from '../lib/api'
 
 export default function Index({ preview, menuItems }) {
     return (
         <Layout preview={preview} menuItems={menuItems}>
-            <Hero />
+            <Container>
+                <h1>😵</h1>
+            </Container>
         </Layout>
     )
 }
