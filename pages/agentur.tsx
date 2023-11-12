@@ -1,27 +1,33 @@
 import { GetStaticProps } from 'next'
 import Container from '../components/container'
 import Layout from '../components/layout'
-import { getAllPostsForHome, getNavItems } from '../lib/api'
+import { BlockRenderer } from '../components/BlockRenderer'
+import { renderPost, getNavItems } from '../lib/api'
 
-export default function Agentur({ preview, menuItems }) {
+export default function Agentur({ preview, menuItems, blocks, postTitle }) {
+    console.log(blocks, postTitle)
     return (
         <Layout preview={preview} menuItems={menuItems}>
             <Container>
-                <h1>Hello World - Agentur</h1>
+                <h1>{postTitle}</h1>
+                <BlockRenderer blocks={blocks} />
             </Container>
         </Layout>
     )
 }
 
-export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-    const allPosts = await getAllPostsForHome(preview)
+export const getStaticProps: GetStaticProps = async () => {
     const menuItems = await getNavItems()
 
+    const { blocks, postTitle } = await renderPost(
+        'https://eossdev.wpengine.com/wp-json/',
+        10
+    )
     return {
         props: {
-            allPosts,
-            preview,
+            postTitle,
             menuItems,
+            blocks,
         },
         revalidate: 10,
     }

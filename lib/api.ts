@@ -227,3 +227,15 @@ export async function getNavItems() {
   `)
     return data.menuItems.edges
 }
+
+export async function renderPost(restUrl, postId) {
+    const postResponse = await fetch(`${restUrl}wp/v2/pages/${postId}/`)
+    const postTitle = (await postResponse.json())?.title?.rendered
+
+    const blocksResponse = await fetch(
+        `${restUrl}vip-block-data-api/v1/posts/${postId}/blocks`
+    )
+    const blocks = (await blocksResponse.json())?.blocks
+    console.log('hello', blocks, postTitle)
+    return { postTitle, blocks }
+}

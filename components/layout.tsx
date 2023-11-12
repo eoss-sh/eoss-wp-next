@@ -1,16 +1,21 @@
-import { Hanken_Grotesk, JetBrains_Mono } from 'next/font/google'
+import {
+    Hanken_Grotesk,
+    JetBrains_Mono,
+    Krona_One,
+    Space_Grotesk,
+} from 'next/font/google'
 import Alert from './alert'
 import Footer from './footer'
 import Meta from './meta'
 import Header from './Header/header'
 
-const jb = JetBrains_Mono({
+const jb = Space_Grotesk({
     subsets: ['latin'],
-    weight: '100',
     display: 'swap',
     variable: '--font-jb',
 })
-const hanken = Hanken_Grotesk({
+const hanken = Krona_One({
+    weight: '400',
     subsets: ['latin'],
     display: 'swap',
     variable: '--font-hanken',

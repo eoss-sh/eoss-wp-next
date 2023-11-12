@@ -9,9 +9,9 @@ module.exports = {
         extend: {
             colors: {
                 primary: '#042825',
-                secondary: '#EEB54F',
-                accent: '#219db0',
-                white: '#ffffff',
+                secondary: '#F76C5E',
+                accent: '#89D5CF',
+                light: '#EFF0F0',
                 black: '#000000',
             },
             spacing: {
@@ -25,10 +25,10 @@ module.exports = {
             },
             fontSize: {
                 base: '1.375rem',
+                '4xl': '2rem',
                 '5xl': '2.5rem',
-                '6xl': '2.75rem',
+                '6xl': '3.5rem',
                 '7xl': '4.5rem',
-                '8xl': '6.25rem',
             },
             fontFamily: {
                 sans: ['var(--font-hanken)'],

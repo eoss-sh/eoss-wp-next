@@ -11,10 +11,9 @@ export default function Header({ menuItems }) {
         setIsOpen(!isOpen)
     }
 
-    console.log(menuItems)
     return (
-        <header className="font-mono bg-primary pt-4 pb-4">
-            <div className="flex flex-row items-center justify-between container mx-auto px-5 md:px-0">
+        <header className="font-mono bg-primary py-8">
+            <div className="flex flex-row items-center justify-between max-w-screen-xl mx-auto px-5 md:px-0">
                 <Link href="/">
                     <Image src={logo} width={100} height={50} alt="Logo" />
                 </Link>
