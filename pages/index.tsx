@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const menuItems = await getNavItems()
 
     const { blocks, postTitle } = await renderPost(
-        'https://eossdev.wpengine.com',
+        'https://eossdev.wpengine.com/wp-json/',
         10
     )
 
