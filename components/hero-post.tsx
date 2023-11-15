@@ -24,7 +24,7 @@ export default function HeroPost({
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
                 <div>
-                    <h3 className="mb-4 text-xl lg:text-xxl leading-tight">
+                    <h3 className="mb-4 text-xl lg:text-xxl">
                         <Link
                             href={`/posts/${slug}`}
                             className="hover:underline"
@@ -37,7 +37,7 @@ export default function HeroPost({
                 </div>
                 <div>
                     <div
-                        className="text-lg leading-relaxed mb-4"
+                        className="text-lg mb-4"
                         dangerouslySetInnerHTML={{ __html: excerpt }}
                     />
                     <Avatar author={author} />
