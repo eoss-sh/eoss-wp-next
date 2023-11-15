@@ -17,7 +17,7 @@ const ColorBackground = ({
     ...props
 }: ColoredBackgroundProps) => {
     return (
-        <div className={`bg-${color} text-white min-h-screen py-32`} {...props}>
+        <div className={`bg-${color} text-white min-h-screen py-9`} {...props}>
             <Container>{children}</Container>
         </div>
     )

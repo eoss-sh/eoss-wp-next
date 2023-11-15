@@ -4,6 +4,7 @@ import Hero from '../components/hero'
 import { renderPost, getNavItems } from '../lib/api'
 import { ThemeColors } from '../components/coloredBackground'
 import { IconName } from '../components/icon'
+import { Paragraph } from '../components/Paragraph'
 
 export default function Index({ preview, menuItems, blocks, postTitle }) {
     return (
@@ -16,7 +17,6 @@ export default function Index({ preview, menuItems, blocks, postTitle }) {
                 Entwicklung, die überzeugt. Design, das fesselt. Content, der
                 berührt. SEO-Optimierung, die Ergebnisse liefert - aus einer
                 Hand.
-                <h1>{postTitle}</h1>
             </Hero>
         </Layout>
     )

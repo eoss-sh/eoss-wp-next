@@ -1,5 +1,6 @@
 import { Heading, HeaderType } from './Heading'
 import Icon, { IconName, IconSize } from './icon'
+import { Paragraph } from './Paragraph'
 import ColoredBackground, { ThemeColors } from './coloredBackground'
 
 type HeroProps = {
@@ -15,7 +16,7 @@ const Hero = ({ children, title, icon, color }: HeroProps) => {
             <Heading type={HeaderType.h1} style={HeaderType.h1}>
                 {title}
             </Heading>
-            <p className="w-1/2 text-xl font-mono py-8">{children}</p>
+            <Paragraph>{children}</Paragraph>
         </ColoredBackground>
     )
 }

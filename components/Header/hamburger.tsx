@@ -12,7 +12,7 @@ const Hamburger = ({ open, handleIsOpen }: HamburgerProps) => {
         >
             <div
                 className={`${hamburgerLine} ${
-                    open ? 'rotate-45 translate-y-3' : ''
+                    open ? 'rotate-45 translate-y-[0.75rem]' : ''
                 }`}
             ></div>
             <div
@@ -20,7 +20,7 @@ const Hamburger = ({ open, handleIsOpen }: HamburgerProps) => {
             ></div>
             <div
                 className={`${hamburgerLine} ${
-                    open ? '-rotate-45 -translate-y-3' : ''
+                    open ? '-rotate-45 -translate-y-[0.75rem]' : ''
                 }`}
             ></div>
         </div>
