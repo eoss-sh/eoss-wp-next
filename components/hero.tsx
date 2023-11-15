@@ -1,4 +1,4 @@
-import { Heading, HeaderType } from './heading'
+import { Heading, HeaderType } from './Heading'
 import Icon, { IconName, IconSize } from './icon'
 import ColoredBackground, { ThemeColors } from './coloredBackground'
 

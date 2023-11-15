@@ -6,9 +6,9 @@ export enum IconName {
 }
 
 export enum IconSize {
-    small = 'text-xl',
-    medium = 'text-4xl',
-    large = 'text-8xl',
+    small = 'text-s',
+    medium = 'text-m',
+    large = 'text-xxl',
 }
 
 export type IconProps = {

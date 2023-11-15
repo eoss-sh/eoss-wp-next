@@ -7,7 +7,7 @@ import PostBody from '../../components/post-body'
 import MoreStories from '../../components/more-stories'
 import PostHeader from '../../components/post-header'
 import SectionSeparator from '../../components/section-separator'
-import Layout from '../../components/layout'
+import Layout from '../../components/Layout'
 import PostTitle from '../../components/post-title'
 import Tags from '../../components/tags'
 import {

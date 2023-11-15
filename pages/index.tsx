@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import Hero from '../components/hero'
 import { renderPost, getNavItems } from '../lib/api'
 import { ThemeColors } from '../components/coloredBackground'
@@ -16,7 +16,7 @@ export default function Index({ preview, menuItems, blocks, postTitle }) {
                 Entwicklung, die überzeugt. Design, das fesselt. Content, der
                 berührt. SEO-Optimierung, die Ergebnisse liefert - aus einer
                 Hand.
-                {postTitle}
+                <h1>{postTitle}</h1>
             </Hero>
         </Layout>
     )

@@ -23,7 +23,7 @@ export default function Header({ menuItems }) {
                         {menuItems.map((item: any) => (
                             <li
                                 key={item.node.id}
-                                className="mr-8 last:mr-0 text-l text-white hover:text-secondary transition"
+                                className="mr-8 last:mr-0 text-s text-white hover:text-secondary transition"
                             >
                                 <Link href={item.node.path}>
                                     {item.node.label}
